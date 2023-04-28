@@ -42,4 +42,4 @@ You will need the following technologies available to try it out:
 
 ### How it looks
 
-![]()
+![](https://i.postimg.cc/ryd4PjjJ/5b3ac317-77af-4079-b8b5-89e0ce8b0868.png)
