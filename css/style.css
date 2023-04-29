@@ -97,5 +97,9 @@ img {
     z-index: 100;
   }
 
+  #shotgun { visibility: hidden; }
+  #bullet { visibility: hidden; }
+
+
   
   
