@@ -13,17 +13,39 @@ body {
     background-position: bottom;
     background-size: cover;
     overflow: hidden;
-    cursor: url('data:image/x-icon;base64,AAACAAEAICACAAgACAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAwAAAAAAAAAAAAAB8D4AAfA+AAAAAAAAAAAAAAMAAAADAAAAAwAAAAMAAAADAAAAAAAAA///////////////////////////////////////////////////////////////////////////+H////h////4f///+H////h////4f///+H///AeA//wHgP/8B4D//AeA///4f///+H////h////4f///+H////h////4f//8='), auto;
-  }
+    cursor: pointer;
+}
 
-#orc{
+#firstOrc{
   margin:50px;
   width: 250px;
   height: 250px;
   position: absolute;
   left: 100px;
   top: 100px;
-  animation-name: orc;
+  animation-name: firstOrc;
+  animation-duration: 6s;
+}
+
+#secondOrc{
+  margin:50px;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  animation-name: secondOrc;
+  animation-duration: 6s;
+}
+
+#thirdOrc{
+  margin:50px;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  bottom: 100px;
+  top: 100px;
+  animation-name: thirdOrc;
   animation-duration: 6s;
 }
 
@@ -112,14 +134,25 @@ body {
 
   #shotgun { visibility: hidden; }
   #bullet { visibility: hidden; }
-  #orc { visibility: hidden; }
+  #firstOrc { visibility: hidden; }
+  #secondOrc { visibility: hidden; }
+  #thirdOrc { visibility: hidden; }
+
   #bullet { visibility: hidden; }
   #bullet-counter { visibility: hidden; }
   #scoreContainer { visibility: hidden; }
 
 
-  @keyframes orc {
+  @keyframes firstOrc {
     10%{left: 20%; bottom: 30%;}
+  }
+
+  @keyframes secondOrc {
+    40%{right: 60%; bottom: 50%;}
+  }
+
+  @keyframes thirdOrc {
+    60%{left: 70%; bottom: 70%;}
   }
 
   

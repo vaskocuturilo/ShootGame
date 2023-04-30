@@ -2,12 +2,18 @@
 
 const btnNew = document.querySelector('.btn--new');
 
-const duck = document.querySelector('#orc');
+const firstOrc = document.querySelector('#firstOrc');
+const secondOrc = document.querySelector('#secondOrc');
+const thirdOrc = document.querySelector('#thirdOrc');
 
 btnNew.addEventListener('click', () => {
    document.getElementById("shotgun").style.visibility = "visible";
    document.getElementById("bullet").style.visibility = "visible";
-   document.getElementById("orc").style.visibility = "visible";
+
+   document.getElementById("firstOrc").style.visibility = "visible";
+   document.getElementById("secondOrc").style.visibility = "visible";
+   document.getElementById("thirdOrc").style.visibility = "visible";
+   
    document.getElementById("bullet").style.visibility = "visible";
    document.getElementById("bullet-counter").style.visibility = "visible";
    document.getElementById("bulletContainer").style.visibility = "visible";
@@ -18,9 +24,21 @@ btnNew.addEventListener('click', () => {
 })
 
 //Add click event
-duck.addEventListener('click', ()=> {
+firstOrc.addEventListener('click', ()=> {
   increaseScore();
-  moveDuck();
+  moveFirstOrc();
+});
+
+//Add click event
+secondOrc.addEventListener('click', ()=> {
+  increaseScore();
+  moveSecondOrc();
+});
+
+//Add click event
+thirdOrc.addEventListener('click', ()=> {
+  increaseScore();
+  moveThirdOrc();
 });
 
 
@@ -34,18 +52,38 @@ const increaseScore = () => {
   let count = Number(score);
   let bulletCount = Number(bullets);
   scoreHTML.innerHTML = count + 1;
-  bulletScoreHTML.innerHTML = --bulletCount;
+  if (bulletCount !== 0) {
+    bulletScoreHTML.innerHTML = --bulletCount;  
+  } else {
+    alert('Game over.');
+  }
 };
 
 const getRandomNum = (num) => {
   return Math.floor(Math.random() * Math.floor(num));
 }
 
-const moveDuck = () => {
+const moveFirstOrc = () => {
   const w = window.innerWidth;
-  const h = window.innerHeight;  
-  duck.style.top = getRandomNum(w) + 'px';
-  duck.style.left = getRandomNum(h) + 'px';   
+  const h = window.innerHeight;
+
+  firstOrc.style.top = getRandomNum(w) + 'px';
+  firstOrc.style.left = getRandomNum(h) + 'px';   
 }
 
+const moveSecondOrc = () => {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  secondOrc.style.top = getRandomNum(w) + 'px';
+  secondOrc.style.left = getRandomNum(h) + 'px';   
+}
+
+const moveThirdOrc = () => {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  thirdOrc.style.top = getRandomNum(w) + 'px';
+  thirdOrc.style.left = getRandomNum(h) + 'px';   
+}
 
