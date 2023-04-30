@@ -3,22 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/style.css" />
+    <meta>
     <title>Shoot game</title>
   </head>
   <body>
+    <div class="container">
     <main>
-    <img src="./img/background.jpg">
-    <img id="shotgun" src="./img/shotgun.png" class="image1">
-    <img id="bullet" src="./img/bullet.png" class="image2">
-    <div id="score-text" class="image2">0</div>
-    <div class='scoreContainer'>
+    <img id='orc' src="./images/orc.gif" alt="duck">
+    <img id="shotgun" src="./images/machine-gun.png" class="image1">
+    <div class='scoreContainer' id="scoreContainer">
         <div id="score-text">Orcs</div>
         <div id="score-counter">0</div>
     </div>
-      <button class="btn btn--new">🔫 Start killing orcs</button>
+    <div class='bulletContainer' id="bulletContainer">
+    <img id="bullet" src="./images/bullet.png" class="image2">
+    <div id="bullet-counter" class="image2">30</div>
+  </div>
+      <button id="button-new" class="btn btn--new">🔫 Start killing orcs</button>
     </main>
     <script src="./js/script.js"></script>
+  </div>
   </body>
 </html>
