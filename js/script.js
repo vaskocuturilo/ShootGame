@@ -13,7 +13,7 @@ btnNew.addEventListener('click', () => {
    document.getElementById("bulletContainer").style.visibility = "visible";
    document.getElementById("scoreContainer").style.visibility = "visible";
 
-   alert('We\'ll start killing orcs very soon. But not now.');
+   alert('Let\'s go kill orcs!!!!!!!!');
    document.getElementById("button-new").style.visibility = "hidden";
 })
 
