@@ -8,24 +8,36 @@
     <title>Shoot game</title>
   </head>
   <body>
+    <div class="modal hidden">
+          <button class="close-modal">&times;</button>
+          <h1>GAME OVER</h1>
+          <p>
+            Sadly, your game is over.
+          </p>
+          <div>
+          </div>
+  </div>
     <div class="container">
     <main>
-    <img id='firstOrc' src="./images/orc.gif" alt="firstOrc">
-    <img id='secondOrc' src="./images/orc.gif" alt="secindOrc">
-    <img id='thirdOrc' src="./images/orc.gif" alt="thirdOrc">
+    <img id='firstOrc' src="./images/orc.gif" alt="firstOrc" class="hidden">
+    <img id='secondOrc' src="./images/orc.gif" alt="secindOrc" class="hidden">
+    <img id='thirdOrc' src="./images/orc.gif" alt="thirdOrc" class="hidden">
     
-    <img id="shotgun" src="./images/machine-gun.png" class="image1">
+    <img id="shotgun" src="./images/machine-gun.png" class="image1 hidden">
 
-    <div class='scoreContainer' id="scoreContainer">
+    <div class='scoreContainer hidden' id="scoreContainer">
         <div id="score-text">Orcs</div>
         <div id="score-counter">0</div>
     </div>
-    <div class='bulletContainer' id="bulletContainer">
+    <div class='bulletContainer hidden' id="bulletContainer">
     <img id="bullet" src="./images/bullet.png" class="image2">
     <div id="bullet-counter" class="image2">3</div>
-  </div>
-      <button id="button-new" class="btn btn--new">🔫 Start killing orcs</button>
+    </div>
+    <button id="button-new" class="btn btn--new">🔫 Start killing orcs</button>
     </main>
+    <audio id="fire">
+      <source src="./sound/fire.ogg" type="audio/mp3">
+    </audio>
     <script src="./js/script.js"></script>
   </div>
   </body>
