@@ -28,13 +28,13 @@ You will need the following technologies available to try it out:
 
 ## TO-DO list (ASAP):
 - Create UI interface for project.
-- Create functionality for game.
+- Create functionality for game. :heavy_check_mark:
 - Create functionality for add game of player.
-- Create functionality for score.
-- Create functionality for new game button.
+- Create functionality for score.:heavy_check_mark:
+- Create functionality for bullets.:heavy_check_mark:
+- Create functionality for new game button. :heavy_check_mark:
 - Create functionality for hold score.
 - Create functionality for edit player name.
-- Add graphics.
 
 ### The Web site link is 
 
