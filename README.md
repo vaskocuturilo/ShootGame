@@ -27,14 +27,15 @@ You will need the following technologies available to try it out:
 * IDE of your choice
 
 ## TO-DO list (ASAP):
-- Create UI interface for project.
+- Create UI interface for project.:heavy_check_mark:
 - Create functionality for game. :heavy_check_mark:
-- Create functionality for add game of player.
 - Create functionality for score.:heavy_check_mark:
 - Create functionality for bullets.:heavy_check_mark:
 - Create functionality for new game button. :heavy_check_mark:
-- Create functionality for hold score.
-- Create functionality for edit player name.
+- Create functionality for a main menu. (Start the game, Add player name, Best Score, Exit)
+- Create functionality for multiply levels (only 3). 
+- Create functionality for changing a background image for different levels.
+- Create functionality for stop game and continue game.
 
 ### The Web site link is 
 
