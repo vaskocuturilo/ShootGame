@@ -12,6 +12,9 @@ const secondOrc = document.querySelector('#secondOrc');
 const thirdOrc = document.querySelector('#thirdOrc');
 const fire =  document.getElementById('fire');
 const audio = document.createElement("AUDIO");
+const bullet1 = document.getElementById('bullet-1');
+const bullet2 = document.getElementById('bullet-2');
+const bullet3 = document.getElementById('bullet-3');
 
 //modal window
 const modal = document.querySelector('.modal');
@@ -52,20 +55,23 @@ firstOrc.addEventListener('click', ()=> {
   increaseScore();
   moveFirstOrc();
   fire.play()
+  bullet1.classList.add('hidden');
 });
 
 //Add click event
 secondOrc.addEventListener('click', ()=> {
   increaseScore();
   moveSecondOrc();
-  fire.play()
+  fire.play();
+  bullet2.classList.add('hidden');
 });
 
 //Add click event
 thirdOrc.addEventListener('click', ()=> {
   increaseScore();
   moveThirdOrc();
-  fire.play()
+  fire.play();
+  bullet3.classList.add('hidden');
 });
 
 
@@ -81,7 +87,8 @@ const increaseScore = () => {
   scoreHTML.innerHTML = count + 1;
 
   if (bulletCount !== 0) {
-    bulletScoreHTML.innerHTML = --bulletCount;  
+    bulletScoreHTML.innerHTML = --bulletCount;
+
   } else {
     openModal();
   }
