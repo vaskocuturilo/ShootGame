@@ -16,46 +16,51 @@ body {
     cursor: url('data:image/x-icon;base64,AAACAAEAICACAAgACAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAwAAAAMAAAADAAAAAwAAAAAAAAAAAAAB8D4AAfA+AAAAAAAAAAAAAAMAAAADAAAAAwAAAAMAAAADAAAAAAAAA///////////////////////////////////////////////////////////////////////////+H////h////4f///+H////h////4f///+H///AeA//wHgP/8B4D//AeA///4f///+H////h////4f///+H////h////4f//8='), auto;
 }
 
-#firstOrc{
+.soldier {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  left: 100px;
+  top: 500px;
+}
+
+
+#soldier-1 {
   margin:50px;
   width: 250px;
   height: 250px;
   position: absolute;
   left: 100px;
-  top: 100px;
-  animation-name: firstOrc;
-  animation-duration: 6s;
+  top: 600px;
+  animation: soldier1 15s infinite;
 }
 
-#secondOrc{
-  margin:50px;
-  width: 250px;
-  height: 250px;
+#soldier-2 {
+  margin:20px;
+  width: 120px;
+  height: 120px;
   position: absolute;
-  right: 100px;
-  top: 100px;
-  animation-name: secondOrc;
-  animation-duration: 6s;
+  left: 1150px;
+  top: 150px;
+  animation: soldier2 15s infinite;
 }
 
-#thirdOrc{
-  margin:50px;
-  width: 250px;
-  height: 250px;
+  #soldier-3 {
+  margin:20px;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  bottom: 100px;
-  top: 100px;
-  animation-name: thirdOrc;
-  animation-duration: 6s;
-}
+  left: 1300px;
+  top: 570px;
+  animation: soldier3 15s infinite;
+  }
 
-.scoreContainer{
-    background-color: black;
+  .scoreContainer{
     width: 10%;
     height:10%;
     color:#FFFFFF;
-    top:5%;
-    right:5%;
+    top:1.5%;
+    left:1.5%;
     border: 2px solid greenyellow;
     border-radius: 50px;
     display:flex;
@@ -66,12 +71,11 @@ body {
   }
 
   .bulletContainer{
-    background-color: black;
     width: 12%;
     height:12%;
     color:#FFFFFF;
-    top:5%;
-    left:5%;
+    bottom:1.5%;
+    left:1.5%;
     border: 2px solid greenyellow;
     border-radius: 50px;
     display:flex;
@@ -184,18 +188,6 @@ body {
     bottom: 0;
   }
   
-  @keyframes firstOrc {
-    10%{left: 20%; bottom: 30%;}
-  }
-
-  @keyframes secondOrc {
-    40%{right: 60%; bottom: 50%;}
-  }
-
-  @keyframes thirdOrc {
-    60%{left: 70%; bottom: 70%;}
-  }
-
   .show-modal {
     font-size: 2rem;
     font-weight: 600;
@@ -245,6 +237,24 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
     z-index: 5;
+}
+
+@keyframes soldier1 {
+   0% {margin-left: -10%;}
+   10%{margin-left: 10%;}
+   20%{margin-left: 20%;}
+   30%{margin-left: 30%;}
+   40%{margin-left: 40%;}
+   50%{margin-left: 50%;}
+   60%{margin-left: 60%;}
+   70%{margin-left: 70%;}
+   80%{margin-left: 80%;}
+   90%{margin-left: 90%;}
+   100%{margin-left: 100%;}
+}
+
+@keyframes soldier2 {
+  0% {margin-left: -2%;}
 }
 
   
