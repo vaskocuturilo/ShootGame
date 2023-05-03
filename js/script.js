@@ -7,14 +7,13 @@ const btnNew = document.querySelector('.btn--new');
 const shotgun = document.querySelector('.image1');
 const bulletContainer = document.querySelector('.bulletContainer');
 const scoreContainer = document.querySelector('.scoreContainer');
-const firstOrc = document.querySelector('#firstOrc');
-const secondOrc = document.querySelector('#secondOrc');
-const thirdOrc = document.querySelector('#thirdOrc');
+
+const soldier1 = document.querySelector('#soldier-1');
+const soldier2 = document.querySelector('#soldier-2');
+const soldier3 = document.querySelector('#soldier-3');
+
 const fire =  document.getElementById('fire');
 const audio = document.createElement("AUDIO");
-const bullet1 = document.getElementById('bullet-1');
-const bullet2 = document.getElementById('bullet-2');
-const bullet3 = document.getElementById('bullet-3');
 
 //modal window
 const modal = document.querySelector('.modal');
@@ -42,38 +41,12 @@ close.addEventListener('click', closeModal);
 btnNew.addEventListener('click', () => {
   shotgun.classList.remove('hidden');
   bulletContainer.classList.remove('hidden');
-  firstOrc.classList.remove('hidden');
-  secondOrc.classList.remove('hidden');
-  thirdOrc.classList.remove('hidden');
+  soldier1.classList.remove('hidden');
+  soldier2.classList.remove('hidden');
+  soldier3.classList.remove('hidden');
   scoreContainer.classList.remove('hidden');
-  alert('Let\'s go kill orcs!!!!!!!!');
   btnNew.classList.add('hidden');
 })
-
-//Add click event
-firstOrc.addEventListener('click', ()=> {
-  increaseScore();
-  moveFirstOrc();
-  fire.play()
-  bullet1.classList.add('hidden');
-});
-
-//Add click event
-secondOrc.addEventListener('click', ()=> {
-  increaseScore();
-  moveSecondOrc();
-  fire.play();
-  bullet2.classList.add('hidden');
-});
-
-//Add click event
-thirdOrc.addEventListener('click', ()=> {
-  increaseScore();
-  moveThirdOrc();
-  fire.play();
-  bullet3.classList.add('hidden');
-});
-
 
 const increaseScore = () => {
   const score = document.querySelector("#score-counter").innerHTML;
@@ -88,37 +61,14 @@ const increaseScore = () => {
 
   if (bulletCount !== 0) {
     bulletScoreHTML.innerHTML = --bulletCount;
+  } 
 
-  } else {
+  if (bulletCount === 0 && score === 3) {
     openModal();
   }
 };
 
-const getRandomNum = (num) => {
-  return Math.floor(Math.random() * Math.floor(num));
+function shoot(zombie){
+  zombie.style.display = 'none';
+  increaseScore();
 }
-
-const moveFirstOrc = () => {
-  const w = window.innerWidth;
-  const h = window.innerHeight;
-
-  firstOrc.style.top = getRandomNum(w) + 'px';
-  firstOrc.style.left = getRandomNum(h) + 'px';   
-}
-
-const moveSecondOrc = () => {
-  const w = window.innerWidth;
-  const h = window.innerHeight;
-
-  secondOrc.style.top = getRandomNum(w) + 'px';
-  secondOrc.style.left = getRandomNum(h) + 'px';   
-}
-
-const moveThirdOrc = () => {
-  const w = window.innerWidth;
-  const h = window.innerHeight;
-
-  thirdOrc.style.top = getRandomNum(w) + 'px';
-  thirdOrc.style.left = getRandomNum(h) + 'px';   
-}
-
