@@ -1,0 +1,15 @@
+{
+  "name": "shootgame",
+  "version": "1.0.0",
+  "description": "[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:run:test": "live-server --port=8080 & cypress run --e2e"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.11.0"
+  }
+}
