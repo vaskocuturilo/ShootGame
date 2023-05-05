@@ -4,7 +4,7 @@
 
 
 ## TASK:
-Create a cimputer game.
+Create a computer game.
 
 ## Requirements:
 - Use any *object-oriented language*.
