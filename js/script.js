@@ -2,6 +2,8 @@
 
 //buttons
 const btnNew = document.querySelector('.btn--new');
+const btnEdit = document.querySelector('.btn--edit');
+const btnExit = document.querySelector('.btn--exit');
 
 //game items
 const shotgun = document.querySelector('.image1');
@@ -46,6 +48,15 @@ btnNew.addEventListener('click', () => {
   soldier3.classList.remove('hidden');
   scoreContainer.classList.remove('hidden');
   btnNew.classList.add('hidden');
+  modal.classList.add('hidden');
+})
+
+btnEdit.addEventListener('click', ()=> {
+  alert('This functionality will add a little be later.')
+})
+
+btnExit.addEventListener('click', ()=> {
+  alert('This functionality will add a little be later.')
 })
 
 const increaseScore = () => {
