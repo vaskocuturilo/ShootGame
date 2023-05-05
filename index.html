@@ -8,12 +8,11 @@
     <title>Shoot game</title>
   </head>
   <body>
-    <div class="modal hidden">
-          <button class="close-modal">&times;</button>
-          <h1>GAME OVER</h1>
-          <p>
-            Sadly, your game is over.
-          </p>
+    <div class="modal" data-cy="modal-window">
+          <button class="close-modal" data-cy="close-button">&times;</button>
+           <button id="button-new" class="btn btn--new" data-cy="main-button">🔫 Start killing orcs</button>
+           <button id="button-edit" class="btn btn--edit" data-cy="edit-button"> ✏️ Change player name</button>
+           <button id="button-exit" class="btn btn--exit" data-cy="exit-button"> 🚶‍♂️🚶‍♀️🚪Exit</button>
           <div>
           </div>
   </div>
@@ -34,7 +33,6 @@
     <img id="bullet-3" src="./images/bullet.png" class="bulletThree">
     <div id="bullet-counter" class="bulletCounter">3</div>
     </div>
-    <button id="button-new" class="btn btn--new">🔫 Start killing orcs</button>
     </main>
     <audio id="fire">
       <source src="./sound/fire.ogg" type="audio/mp3">

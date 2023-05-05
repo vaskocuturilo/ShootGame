@@ -1,5 +1,7 @@
 /// <reference types ="cypress"/>
 
+import { mainPage } from "../support/pages/MainPage.cy"
+
 describe('Smoke automation scripts.', () => {
   beforeEach(() => {
     cy.visit('/')   
@@ -7,7 +9,7 @@ describe('Smoke automation scripts.', () => {
 
   context('Main page.',  ()=> {
     it('Try to check correct title', () => {
-      cy.title().should('eq','Shoot game');
+     mainPage.allButtonsAndModalWindowIsAvailable();
     })
   })
 })
