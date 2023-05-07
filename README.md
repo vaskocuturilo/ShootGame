@@ -33,9 +33,14 @@ You will need the following technologies available to try it out:
 - Create functionality for bullets.:heavy_check_mark:
 - Create functionality for new game button. :heavy_check_mark:
 - Create functionality for a main menu. (Start the game, Add player name, Best Score, Exit)
+- Add sound for zombie.
+- Create functionality for adding bullet hole display.
+- Create functionality for animated shoots from the shot gun.
+- Create functionality for display bullets in the ammo block(after each shoot, remove one bullet).
 - Create functionality for multiply levels (only 3). 
 - Create functionality for changing a background image for different levels.
-- Create functionality for stop game and continue game.
+- Create functionality for pause game and continue game.
+- Add an inventory display panel.
 
 ### The Web site link is 
 
