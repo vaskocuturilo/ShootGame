@@ -254,4 +254,17 @@ body {
   0% {margin-left: -2%;}
 }
 
+.bullet-hole {
+position: absolute;
+height: 50px;
+width: 50px;
+transform: translate(-50%, -50%);
+}
+
+.blood-spot {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  transform: translate(-50%, -50%);
+}
   
