@@ -173,8 +173,19 @@ body {
   .btn--exit {
     top: 20rem;
   }
+  
   .image1 {
-    width: 30%;
+    width: 20%;
+    position: absolute;
+    margin: auto;
+    top: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .animation {
+    width: 20%;
     position: absolute;
     margin: auto;
     top: 10;

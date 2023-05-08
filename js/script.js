@@ -6,7 +6,7 @@ const btnEdit = document.querySelector('.btn--edit');
 const btnExit = document.querySelector('.btn--exit');
 
 //game items
-const shotgun = document.querySelector('.image1');
+//const shotgun = document.querySelector('.image1');
 const bulletContainer = document.querySelector('.bulletContainer');
 const scoreContainer = document.querySelector('.scoreContainer');
 
@@ -18,6 +18,7 @@ const fire =  document.getElementById('fire');
 const audio = document.createElement("AUDIO");
 const bulletHole = document.querySelector('.bullet-hole');
 const bloodSpot = document.querySelector('.blood-spot');
+const animation = document.querySelector('.animation');
 
 //modal window
 const modal = document.querySelector('.modal');
@@ -25,13 +26,14 @@ const overlay = document.querySelector('.overlay');
 const close = document.querySelector('.close-modal');
 
 bloodSpot.style.display = 'none';
+animation.style.display = 'none';
 
 document.body.appendChild(audio);
 audio.src = "./sound/battle.ogg";
 
-document.body.addEventListener("mousemove", function () {
-  audio.play()
-})
+ document.body.addEventListener("mousemove", function () {
+   audio.play()
+ })
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -46,6 +48,7 @@ close.addEventListener('click', closeModal);
 
 btnNew.addEventListener('click', () => {
   shotgun.classList.remove('hidden');
+  animation.classList.remove('hidden');
   bulletContainer.classList.remove('hidden');
   soldier1.classList.remove('hidden');
   soldier2.classList.remove('hidden');
@@ -86,11 +89,13 @@ const increaseScore = () => {
 };
 
 function shoot(zombie) {
-    fire.play();
-    zombie.style.display = 'none';
-    increaseScore();
-    bloodSpot.style.display='block';
-    setTimeout(()=>{
+  bulletHole.style.display='none';
+  fire.play();
+  zombie.style.display = 'none';
+  increaseScore();
+  bloodSpot.style.display='block';
+  
+  setTimeout(()=>{
     bloodSpot.style.display='none';
   }, 1000);
 }
@@ -105,12 +110,17 @@ window.addEventListener('mousemove',(e)=> {
   bloodSpot.style.top = e.pageY + "px"; 
 })
 
-bulletHole.style.display = 'none';
+bulletHole.style.display='none';
+
 window.addEventListener('click', (e) => {
+  animation.style.display = 'block';
+  shotgun.style.display = 'none';
   fire.play();
   bulletHole.style.display='block';
   setTimeout(()=>{
     bulletHole.style.display='none';
+    shotgun.style.display = 'block';
+    animation.style.display = 'none';
   }, 1000);
 })
 
