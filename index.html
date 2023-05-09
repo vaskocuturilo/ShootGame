@@ -18,27 +18,27 @@
   </div>
     <div class="container">
     <main>
-      <img src="./images/bullet_hole.png" class="bullet-hole hidden">
-      <img src="./images/bloodspot.png" class="blood-spot hidden">
+      <img src="./images/bullet_hole.png" class="bullet-hole hidden" data-cy="bullet-hole">
+      <img src="./images/bloodspot.png" class="blood-spot hidden" data-cy="blood-spot">
 
-      <img id='soldier-1' onclick="shoot(this)" src="./images/soldier-1.gif" class="soldier hidden">
-    <img id='soldier-2' onclick="shoot(this)" src="./images/soldier-2.gif" class="soldier hidden">
-    <img id='soldier-3' onclick="shoot(this)" src="./images/soldie-3.gif"  class="soldier hidden">
-    <img id="shotgun" src="./images/shootgun.png" class="image1 hidden">
-    <img id="animation" src="./images/animation.gif" class="animation hidden">
+      <img id='soldier-1' onclick="shoot(this)" src="./images/soldier-1.gif" class="soldier hidden" data-cy="soldier-1">
+    <img id='soldier-2' onclick="shoot(this)" src="./images/soldier-2.gif" class="soldier hidden" data-cy="soldier-2">
+    <img id='soldier-3' onclick="shoot(this)" src="./images/soldie-3.gif"  class="soldier hidden" data-cy="soldier-3">
+    <img id="shotgun" src="./images/shootgun.png" class="image1 hidden" data-cy="shotgun">
+    <img id="animation" src="./images/animation.gif" class="animation hidden" data-cy="animation">
 
-    <div class='scoreContainer hidden' id="scoreContainer">
-        <div id="score-text">Orcs</div>
-        <div id="score-counter">0</div>
+    <div class='scoreContainer hidden' id="scoreContainer" data-cy="scoreContainer">
+        <div id="score-text" data-cy="score-text">Orcs</div>
+        <div id="score-counter" data-cy="score-counter">0</div>
     </div>
-    <div class='bulletContainer hidden' id="bulletContainer">
-    <img id="bullet-1" src="./images/bullet.png" class="bulletOne">
-    <img id="bullet-2" src="./images/bullet.png" class="bulletTwo">
-    <img id="bullet-3" src="./images/bullet.png" class="bulletThree">
-    <div id="bullet-counter" class="bulletCounter">3</div>
+    <div class='bulletContainer hidden' id="bulletContainer" data-cy="bullet-counter">
+    <img id="bullet-1" src="./images/bullet.png" class="bulletOne" data-cy="bullet-1">
+    <img id="bullet-2" src="./images/bullet.png" class="bulletTwo" data-cy="bullet-2">
+    <img id="bullet-3" src="./images/bullet.png" class="bulletThree" data-cy="bullet-3">
+    <div id="bullet-counter" class="bulletCounter" data-cy="bullet-counter">3</div>
     </div>
     </main>
-    <audio id="fire">
+    <audio id="fire" data-cy="audio-fire">
       <source src="./sound/fire.ogg" type="audio/mp3">
     </audio>
     <script src="./js/script.js"></script>
