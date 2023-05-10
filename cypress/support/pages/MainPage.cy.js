@@ -10,14 +10,19 @@ export class MainPage {
         exitButton: () => cy.get('[data-cy="exit-button"]'),
     } 
 
-    allButtonsAndModalWindowIsAvailable() {
+    allButtonsAndModalWindowAreAvailable() {
       this.elements.title().should('eq','Shoot game');
       this.elements.modalWindow().should('be.visible');
       this.elements.closeButton().should('be.visible');
       this.elements.newGameButton().should('be.visible');
       this.elements.editButton().should('be.visible');
       this.elements.exitButton().should('be.visible');
-  }    
+    }
+    
+    tapNewGameButton() {
+      this.elements.newGameButton().should('be.visible').and('not.be.disabled');
+      this.elements.newGameButton().click();
+    }
 }
 
-export const mainPage =new MainPage();
+export const mainPage = new MainPage();

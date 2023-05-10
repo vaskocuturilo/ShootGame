@@ -8,8 +8,8 @@ describe('Smoke automation scripts.', () => {
   })
 
   context('Main page.',  ()=> {
-    it('Try to check correct title', () => {
-     mainPage.allButtonsAndModalWindowIsAvailable();
+    it('Try to check that all elements in the menu on the main page are available.', () => {
+     mainPage.allButtonsAndModalWindowAreAvailable();
     })
   })
 })
