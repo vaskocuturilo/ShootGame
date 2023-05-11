@@ -17,7 +17,7 @@ const soldier3 = document.querySelector('#soldier-3');
 const fire =  document.getElementById('fire');
 const audio = document.createElement("AUDIO");
 const bulletHole = document.querySelector('.bullet-hole');
-const bloodSpot = document.querySelector('.blood-spot');
+const toilet = document.querySelector('.toilet');
 const animation = document.querySelector('.animation');
 
 //modal window
@@ -25,7 +25,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const close = document.querySelector('.close-modal');
 
-bloodSpot.style.display = 'none';
+toilet.style.display = 'none';
 animation.style.display = 'none';
 
 document.body.appendChild(audio);
@@ -55,7 +55,7 @@ btnNew.addEventListener('click', () => {
   soldier3.classList.remove('hidden');
   scoreContainer.classList.remove('hidden');
   bulletHole.classList.remove('hidden');
-  bloodSpot.classList.remove('hidden');
+  toilet.classList.remove('hidden')
   btnNew.classList.add('hidden');
   modal.classList.add('hidden');  
 })
@@ -89,15 +89,10 @@ const increaseScore = () => {
 };
 
 function shoot(zombie) {
-  bulletHole.style.display='none';
-  fire.play();
-  zombie.style.display = 'none';
-  increaseScore();
-  bloodSpot.style.display='block';
-  
-  setTimeout(()=>{
-    bloodSpot.style.display='none';
-  }, 1000);
+ hiddenZombie(zombie);
+ animationFire();
+ increaseScore();
+ animationBlood();
 }
 
 window.addEventListener('mousemove',(e)=> {
@@ -106,13 +101,17 @@ window.addEventListener('mousemove',(e)=> {
 })
 
 window.addEventListener('mousemove',(e)=> {
-  bloodSpot.style.left = e.pageX + "px";
-  bloodSpot.style.top = e.pageY + "px"; 
+  toilet.style.left = e.pageX + "px";
+  toilet.style.top = e.pageY + "px"; 
 })
 
 bulletHole.style.display='none';
 
 window.addEventListener('click', (e) => {
+  animationFire();
+})
+
+const animationFire = () => {
   animation.style.display = 'block';
   shotgun.style.display = 'none';
   fire.play();
@@ -122,6 +121,18 @@ window.addEventListener('click', (e) => {
     shotgun.style.display = 'block';
     animation.style.display = 'none';
   }, 1000);
-})
+}
+
+const animationBlood  = ()=>{
+  toilet.style.display='block'; 
+  setTimeout(()=>{
+    toilet.style.display='none';
+  }, 1000);
+}
+
+const hiddenZombie = (zombie)=> {
+  zombie.style.display = 'none';
+}
+
 
 
