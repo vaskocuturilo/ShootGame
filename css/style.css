@@ -85,6 +85,27 @@ body {
     overflow: hidden;
   }
 
+  .timeContainer{
+    width: 10%;
+    height:10%;
+    color:#e90c0cf5;
+    top:1.5%;
+    right:1.5%;
+    border: 2px solid greenyellow;
+    border-radius: 50px;
+    display:flex;
+    position:fixed;
+    flex-direction:column;
+    align-items:center;
+    overflow: hidden;
+  }
+
+   #time {
+    font-size:5em;  
+    font-weight:bold;
+    color:#06E515;
+  }
+
   .bulletOne {
     width: 150px;
     height: 150px;
@@ -94,6 +115,7 @@ body {
     transform: translate(5%,-5%);
     z-index: 100;
   }
+
   .bulletTwo {
     width: 150px;
     height: 150px;
