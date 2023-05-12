@@ -12,6 +12,8 @@ export class GamePage {
         bulletTwo: ()=> cy.get('[data-cy="bullet-2"]'),
         bulletThree: ()=> cy.get('[data-cy="bullet-3"]'),
         bulletCounter: () => cy.get('[data-cy="bullet-counter"]'),
+        timeContainer: () => cy.get('[data-cy="time-container"]'),
+        time: () => cy.get('[data-cy="time"]'),
         audioFire: () => cy.get('[data-cy="audio-fire"]')
     } 
 
@@ -26,6 +28,11 @@ export class GamePage {
       this.elements.bulletTwo().parent().scrollIntoView().should('be.visible');
       this.elements.bulletThree().parent().scrollIntoView().should('be.visible');
       this.elements.bulletCounter().should('be.visible');
+      this.elements.timeContainer().should('be.visible');
+      this.elements.time().should('not.be.empty');
+      cy.clock();
+      this.elements.time().should('have.text', '26');
+
       this.elements.audioFire().invoke('attr', 'src')
       .then((audiofile) => {
         const audio = new Audio(audiofile);

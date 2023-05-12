@@ -6,10 +6,10 @@ const btnEdit = document.querySelector('.btn--edit');
 const btnExit = document.querySelector('.btn--exit');
 
 //game items
-//const shotgun = document.querySelector('.image1');
+const shotgun = document.querySelector('.image1');
 const bulletContainer = document.querySelector('.bulletContainer');
 const scoreContainer = document.querySelector('.scoreContainer');
-
+const timeContainer = document.querySelector('.timeContainer');
 const soldier1 = document.querySelector('#soldier-1');
 const soldier2 = document.querySelector('#soldier-2');
 const soldier3 = document.querySelector('#soldier-3');
@@ -50,6 +50,7 @@ btnNew.addEventListener('click', () => {
   shotgun.classList.remove('hidden');
   animation.classList.remove('hidden');
   bulletContainer.classList.remove('hidden');
+  timeContainer.classList.remove('hidden');
   soldier1.classList.remove('hidden');
   soldier2.classList.remove('hidden');
   soldier3.classList.remove('hidden');
@@ -133,6 +134,27 @@ const animationBlood  = ()=>{
 const hiddenZombie = (zombie)=> {
   zombie.style.display = 'none';
 }
+
+function startTimer(duration, display) {
+  let timer = duration, seconds;
+  setInterval(function () {
+      seconds = parseInt(timer % 60, 10);
+     
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+
+      display.textContent = seconds;
+
+      if (--timer < 0) {
+          timer = duration;
+      }
+  }, 1000);
+}
+
+window.onload = function () {
+  let oneMinute = 30 * 1,
+      display = document.querySelector('#time');
+  startTimer(oneMinute, display);
+};
 
 
 
