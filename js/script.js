@@ -15,13 +15,24 @@ const soldier2 = document.querySelector('#soldier-2');
 const soldier3 = document.querySelector('#soldier-3');
 
 const fire =  document.getElementById('fire');
+const misFire =  document.getElementById('misFire');
 const audio = document.createElement("AUDIO");
 const bulletHole = document.querySelector('.bullet-hole');
 const toilet = document.querySelector('.toilet');
 const animation = document.querySelector('.animation');
 
+
+const score = document.querySelector("#score-counter").innerHTML;
+const scoreHTML = document.querySelector("#score-counter");
+let count = Number(score);
+
+const bullets = document.querySelector("#bullet-counter").innerHTML;
+const bulletScoreHTML = document.querySelector("#bullet-counter");
+let bulletCount = Number(bullets);
+
 //modal window
 const modal = document.querySelector('.modal');
+const gameOver = document.querySelector('.game-over-modal');
 const overlay = document.querySelector('.overlay');
 const close = document.querySelector('.close-modal');
 
@@ -36,11 +47,11 @@ audio.src = "./sound/battle.ogg";
  })
 
 const openModal = function () {
-  modal.classList.remove('hidden');
+  gameOver.classList.remove('hidden');
 }
 
 const closeModal = () => {
-  modal.classList.add('hidden');
+  gameOver.classList.add('hidden');
   window.location.reload(true);
 }
 
@@ -70,31 +81,10 @@ btnExit.addEventListener('click', ()=> {
 })
 
 const increaseScore = () => {
-  const score = document.querySelector("#score-counter").innerHTML;
-  const bullets = document.querySelector("#bullet-counter").innerHTML;
-
-  const scoreHTML = document.querySelector("#score-counter");
-  const bulletScoreHTML = document.querySelector("#bullet-counter");
-
-  let count = Number(score);
-  let bulletCount = Number(bullets);
-  scoreHTML.innerHTML = count + 1;
-
   if (bulletCount !== 0) {
     bulletScoreHTML.innerHTML = --bulletCount;
-  } 
-
-  if (bulletCount === 0 && score === 3) {
-    openModal();
   }
 };
-
-function shoot(zombie) {
- hiddenZombie(zombie);
- animationFire();
- increaseScore();
- animationBlood();
-}
 
 window.addEventListener('mousemove',(e)=> {
   bulletHole.style.left = e.pageX + "px";
@@ -108,31 +98,47 @@ window.addEventListener('mousemove',(e)=> {
 
 bulletHole.style.display='none';
 
-window.addEventListener('click', (e) => {
-  animationFire();
-})
+window.onclick = function(e)  {
+  if (bulletCount !== 0) {
+    if (e.target.id === 'soldier-1' && bulletCount !== 0) {
+      doingFunction(soldier1);
+     } else if (e.target.id === 'soldier-2' && bulletCount !== 0) {
+      doingFunction(soldier2);
+     } else if (e.target.id === 'soldier-3' && bulletCount !== 0) {
+      doingFunction(soldier3);
+     } else {
+         increaseScore();
+         animationFire();
+     }
+  } else {
+     openModal();
+  }
+}
 
 const animationFire = () => {
-  animation.style.display = 'block';
-  shotgun.style.display = 'none';
-  fire.play();
-  bulletHole.style.display='block';
-  setTimeout(()=>{
+  if (bulletCount !== 0) {
+    animation.style.display = 'block';
+    shotgun.style.display = 'none';  
+    bulletHole.style.display='block';
+    setTimeout(()=>{
     bulletHole.style.display='none';
     shotgun.style.display = 'block';
     animation.style.display = 'none';
-  }, 1000);
+   }, 1000);
+  } else {
+    misFireFunction();
+  } 
 }
 
-const animationBlood  = ()=>{
+const animationToilet  = ()=>{
   toilet.style.display='block'; 
-  setTimeout(()=>{
+  setTimeout(() => {
     toilet.style.display='none';
   }, 1000);
 }
 
-const hiddenZombie = (zombie)=> {
-  zombie.style.display = 'none';
+const killSoldier = (e) => {
+  e.style.display = 'none';
 }
 
 function startTimer(duration, display) {
@@ -156,5 +162,22 @@ window.onload = function () {
   startTimer(oneMinute, display);
 };
 
+
+const fireFunction = () => {
+  fire.play();
+}
+
+const misFireFunction = () => {
+misFire.play();
+}
+
+const doingFunction = (element)=> {
+    fireFunction();
+    increaseScore();
+    animationFire();
+    killSoldier(element);
+    animationToilet();
+    scoreHTML.innerHTML = ++count;
+}
 
 

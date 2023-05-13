@@ -255,6 +255,21 @@ body {
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 10;
     background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.game-over-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  height: 40%;
+  background-color: rgb(123, 153, 16);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
 
 }
 

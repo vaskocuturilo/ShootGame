@@ -7,6 +7,8 @@ export class GamePage {
         soldierThree: () => cy.get('[data-cy="soldier-3"]'),
         shotgun: () => cy.get('[data-cy="shotgun"]'),
         scoreContainer: ()=> cy.get('[data-cy="score-container"]'),
+        scoreText: () => cy.get('[data-cy="score-text"]'),
+        scoreCounter: () => cy.get('[data-cy="score-counter"]'),
         bulletContainer: ()=> cy.get('[data-cy="bullet-counter"]'),
         bulletOne: ()=> cy.get('[data-cy="bullet-1"]'),
         bulletTwo: ()=> cy.get('[data-cy="bullet-2"]'),
@@ -14,7 +16,8 @@ export class GamePage {
         bulletCounter: () => cy.get('[data-cy="bullet-counter"]'),
         timeContainer: () => cy.get('[data-cy="time-container"]'),
         time: () => cy.get('[data-cy="time"]'),
-        audioFire: () => cy.get('[data-cy="audio-fire"]')
+        audioFire: () => cy.get('[data-cy="audio-fire"]'),
+        toilet: () => cy.get('[data-cy="toilet"]')
     } 
 
     verifyThatAllElementsAreAvailable() {
@@ -22,7 +25,9 @@ export class GamePage {
       this.elements.soldierTwo().should('be.visible');
       this.elements.soldierThree().should('be.visible');
       this.elements.shotgun().should('be.visible');
-      this.elements.scoreContainer().should('be.visible');  
+      this.elements.scoreContainer().should('be.visible');
+      this.elements.scoreText().should('be.visible').and('have.text', 'Orcs');
+      this.elements.scoreCounter().should('be.visible').and('have.text', '0');  
       this.elements.bulletContainer().should('be.visible');
       this.elements.bulletOne().parent().scrollIntoView().should('be.visible');
       this.elements.bulletTwo().parent().scrollIntoView().should('be.visible');
@@ -38,6 +43,14 @@ export class GamePage {
         const audio = new Audio(audiofile);
         audio.play();
       });
+    }
+
+    shootSoldier() {
+         this.elements.soldierOne().click();
+         this.elements.soldierOne().should('not.be.visible');
+         this.elements.toilet().should('be.visible');
+         this.elements.scoreText().should('have.text', 'Orcs');
+         this.elements.scoreCounter().should('have.text', '1');
     }
 }
 

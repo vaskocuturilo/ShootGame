@@ -16,14 +16,22 @@
           <div>
           </div>
   </div>
+  <div class="game-over-modal hidden" data-cy="modal-window">
+    <button class="close-modal" data-cy="close-button">&times;</button>
+    <p>
+      GAME OVER
+    </p>
+    <div>
+    </div>
+</div>
     <div class="container">
     <main>
       <img src="./images/bullet_hole.png" class="bullet-hole hidden" data-cy="bullet-hole">
       <img src="./images/toilet.png" class="toilet hidden" data-cy="toilet">
 
-    <img id="soldier-1" onclick="shoot(this)" src="./images/soldier-1.gif" class="soldier hidden" data-cy="soldier-1">
-    <img id="soldier-2" onclick="shoot(this)" src="./images/soldier-2.gif" class="soldier hidden" data-cy="soldier-2">
-    <img id="soldier-3" onclick="shoot(this)" src="./images/soldie-3.gif"  class="soldier hidden" data-cy="soldier-3">
+    <img id="soldier-1" src="./images/soldier-1.gif" class="soldier hidden" data-cy="soldier-1">
+    <img id="soldier-2" src="./images/soldier-2.gif" class="soldier hidden" data-cy="soldier-2">
+    <img id="soldier-3" src="./images/soldie-3.gif"  class="soldier hidden" data-cy="soldier-3">
     <img id="shotgun" src="./images/shootgun.png" class="image1 hidden" data-cy="shotgun">
     <img id="animation" src="./images/animation.gif" class="animation hidden" data-cy="animation">
 
@@ -43,6 +51,9 @@
     </main>
     <audio id="fire" data-cy="audio-fire">
       <source src="./sound/fire.ogg" type="audio/mp3">
+    </audio>
+    <audio id="misFire" data-cy="audio-misfire">
+      <source src="./sound/misfire.ogg" type="audio/mp3">
     </audio>
     <script src="./js/script.js"></script>
   </div>
