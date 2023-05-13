@@ -99,18 +99,20 @@ window.addEventListener('mousemove',(e)=> {
 bulletHole.style.display='none';
 
 window.onclick = function(e)  {
+  const element = e.target.id;
   if (bulletCount !== 0) {
-    if (e.target.id === 'soldier-1' && bulletCount !== 0) {
-      doingFunction(soldier1);
-     } else if (e.target.id === 'soldier-2' && bulletCount !== 0) {
-      doingFunction(soldier2);
-     } else if (e.target.id === 'soldier-3' && bulletCount !== 0) {
-      doingFunction(soldier3);
+    if (element === 'soldier-1') {
+      doingFunction(element);
+     } else if (element === 'soldier-2') {
+      doingFunction(element);
+     } else if (element === 'soldier-3') {
+      doingFunction(element);
      } else {
          increaseScore();
          animationFire();
      }
   } else {
+    misFireFunction();
      openModal();
   }
 }
@@ -137,8 +139,8 @@ const animationToilet  = ()=>{
   }, 1000);
 }
 
-const killSoldier = (e) => {
-  e.style.display = 'none';
+const killSoldier = (element) => {
+  document.getElementById(element).style.display='none';
 }
 
 function startTimer(duration, display) {
