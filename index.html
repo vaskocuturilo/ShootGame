@@ -16,13 +16,12 @@
           <div>
           </div>
   </div>
-  <div class="game-over-modal hidden" data-cy="modal-window">
+  <div class="game-over-modal hidden" data-cy="game-over-window">
     <button class="close-modal" data-cy="close-button">&times;</button>
-    <p>
-      GAME OVER
-    </p>
-    <div>
+    <div class="center">
+      <p>Game over</p>
     </div>
+  </div>
 </div>
     <div class="container">
     <main>
@@ -40,7 +39,7 @@
         <div id="score-counter" data-cy="score-counter">0</div>
     </div>
     <div class='timeContainer hidden' id="timeContainer" data-cy="time-container">
-      <div><span id="time" data-cy="time">30</span></div>
+      <div><span id="time" data-cy="time"></span></div>
   </div>
     <div class='bulletContainer hidden' id="bulletContainer" data-cy="bullet-counter">
     <img id="bullet-1" src="./images/bullet.png" class="bulletOne" data-cy="bullet-1">

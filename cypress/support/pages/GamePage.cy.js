@@ -17,7 +17,10 @@ export class GamePage {
         timeContainer: () => cy.get('[data-cy="time-container"]'),
         time: () => cy.get('[data-cy="time"]'),
         audioFire: () => cy.get('[data-cy="audio-fire"]'),
-        toilet: () => cy.get('[data-cy="toilet"]')
+        toilet: () => cy.get('[data-cy="toilet"]'),
+        gameOverWindow: () => cy.get('[data-cy="game-over-window"]'),
+        gameOverText: () => cy.get('p'),
+        closeButton: () => cy.get('[data-cy="close-button"]')
     } 
 
     verifyThatAllElementsAreAvailable() {
@@ -52,6 +55,18 @@ export class GamePage {
          this.elements.scoreText().should('have.text', 'Orcs');
          this.elements.scoreCounter().should('have.text', '1');
     }
+
+    shootSoldiers() {
+      cy.get('.soldier').each(($el) => {
+        cy.wrap($el).click();
+      });
+
+      this.elements.gameOverWindow().should('be.visible');
+      this.elements.closeButton().should('be.visible');
+      this.elements.gameOverText().should('have.text', 'Game over');
+      this.elements.scoreText().should('have.text', 'Orcs');
+      this.elements.scoreCounter().should('have.text', '2');
+ }
 }
 
 export const gamePage = new GamePage();
