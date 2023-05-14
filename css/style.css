@@ -17,8 +17,8 @@ body {
 }
 
 .soldier {
-  width: 250px;
-  height: 250px;
+  width: auto;
+  height: auto;
   position: relative;
   left: 100px;
   top: 500px;
@@ -27,8 +27,8 @@ body {
 
 #soldier-1 {
   margin:50px;
-  width: 250px;
-  height: 250px;
+  width: auto;
+  height:auto;
   position: absolute;
   left: 100px;
   top: 600px;
@@ -37,8 +37,8 @@ body {
 
 #soldier-2 {
   margin:20px;
-  width: 120px;
-  height: 120px;
+  width: auto;
+  height: auto;
   position: absolute;
   left: 1150px;
   top: 150px;
@@ -47,8 +47,8 @@ body {
 
   #soldier-3 {
   margin:20px;
-  width: 100px;
-  height: 100px;
+  width: auto;
+  height: auto;
   position: absolute;
   left: 1300px;
   top: 570px;
@@ -314,5 +314,12 @@ transform: translate(-50%, -50%);
   height: 200px;
   width: 200px;
   transform: translate(-50%, -50%);
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
 }
   
