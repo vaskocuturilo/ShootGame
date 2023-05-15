@@ -33,6 +33,7 @@ You will need the following technologies available to try it out:
 - Create functionality for bullets.:heavy_check_mark:
 - Create functionality for new game button. :heavy_check_mark:
 - Create functionality for a main menu. (Start the game, Add player name, Best Score, Exit)
+- Add misfire. :heavy_check_mark:
 - Add sound for zombie.
 - Create functionality for adding bullet hole display. :heavy_check_mark:
 - Create functionality for animated shoots from the shot gun. :heavy_check_mark:
